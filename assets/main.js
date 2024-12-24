@@ -6,7 +6,7 @@ const getOptions = (direction = 'horizontal', paginationEL, dynamicBullets = fal
     pagination: {
       clickable: true,
       dynamicBullets,
-      dynamicMainBullets: 2,
+      dynamicMainBullets: 1,
       el: paginationEL
     },
     preloadImages: false,
@@ -25,7 +25,7 @@ var mySwiper = new Swiper('.swiper', getOptions('horizontal', '.swiper-paginatio
 setTimeout(() => {
   var mySwiper2 = new Swiper('.swiper2', getOptions('vertical', '.swiper-pagination2'))
   var mySwiper3 = new Swiper('.swiper3', getOptions('vertical', '.swiper-pagination3'))
-  var mySwiper4 = new Swiper('.swiper5', getOptions('vertical', '.swiper-pagination4'))
+  var mySwiper4 = new Swiper('.swiper4', getOptions('vertical', '.swiper-pagination4'))
   console.log(mySwiper, mySwiper2, mySwiper3, mySwiper4)
 }, 600)
 
