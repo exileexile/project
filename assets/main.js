@@ -27,7 +27,7 @@ setTimeout(() => {
   var mySwiper3 = new Swiper('.swiper3', getOptions('vertical', '.swiper-pagination3'))
   var mySwiper4 = new Swiper('.swiper5', getOptions('vertical', '.swiper-pagination4'))
   console.log(mySwiper, mySwiper2, mySwiper3, mySwiper4)
-}, 500)
+}, 600)
 
 
 /* document.addEventListener('DOMContentLoaded', function() {
