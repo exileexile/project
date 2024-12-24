@@ -53,3 +53,42 @@ var mySwiper3 = new Swiper('.swiper3', {
 })
 
 console.log(mySwiper, mySwiper2, mySwiper3)
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all img elements with the 'swiper-lazy' class
+  const images = document.querySelectorAll('img.swiper-lazy');
+
+  images.forEach(img => {
+    // Create a new Image object
+    const imgObj = new Image();
+    imgObj.crossOrigin = 'Anonymous'; // Only needed if images are from a different domain
+    imgObj.src = img.src;
+
+    imgObj.onload = function() {
+      // Create a canvas element
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Set canvas dimensions to the image dimensions
+      canvas.width = imgObj.width;
+      canvas.height = imgObj.height;
+
+      // Draw the image onto the canvas
+      ctx.drawImage(imgObj, 0, 0);
+
+      // Get the base64 encoded data URL
+      const base64Data = canvas.toDataURL('image/png'); // Use 'image/jpeg' if needed
+
+      // Replace the img src with the base64 data URL
+      img.src = base64Data;
+
+      // Optionally, remove the 'convertible' class to prevent re-processing
+      img.classList.remove('convertible');
+    };
+
+    // Handle cached images
+    if (imgObj.complete) {
+      imgObj.onload();
+    }
+  });
+});
