@@ -54,7 +54,7 @@ var mySwiper3 = new Swiper('.swiper3', {
 
 console.log(mySwiper, mySwiper2, mySwiper3)
 
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
   // Get all img elements with the 'swiper-lazy' class
   const images = document.querySelectorAll('img.swiper-lazy');
 
@@ -91,4 +91,4 @@ document.addEventListener('DOMContentLoaded', function() {
       imgObj.onload();
     }
   });
-});
+}); */
